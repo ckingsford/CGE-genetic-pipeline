@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+	<appender name="ROOT" class="org.apache.log4j.FileAppender">
+		<param name="file" value="log/application.log" />
+		<param name="immediateFlush" value="true" />
+		<param name="threshold" value="debug" />
+		<param name="append" value="false" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="conversionPattern" value="%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="DATAPREPARE" class="org.apache.log4j.FileAppender">
+		<param name="file" value="log/dataprepare.log" />
+		<param name="immediateFlush" value="true" />
+		<param name="threshold" value="debug" />
+		<param name="append" value="false" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="conversionPattern" value="%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="DATAREADER" class="org.apache.log4j.FileAppender">
+		<param name="file" value="log/datareader.log" />
+		<param name="immediateFlush" value="true" />
+		<param name="threshold" value="debug" />
+		<param name="append" value="false" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="conversionPattern" value="%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="DATAPREPROCESSOR" class="org.apache.log4j.FileAppender">
+		<param name="file" value="log/datapreprocessor.log" />
+		<param name="immediateFlush" value="true" />
+		<param name="threshold" value="debug" />
+		<param name="append" value="false" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="conversionPattern" value="%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="SNPFILTER" class="org.apache.log4j.FileAppender">
+		<param name="file" value="log/snpfilter.log" />
+		<param name="immediateFlush" value="true" />
+		<param name="threshold" value="debug" />
+		<param name="append" value="false" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="conversionPattern" value="%m%n" />
+		</layout>
+	</appender>
+
+	<appender name="DATAANALYZER" class="org.apache.log4j.FileAppender">
+		<param name="file" value="log/dataanalyzer.log" />
+		<param name="immediateFlush" value="true" />
+		<param name="threshold" value="debug" />
+		<param name="append" value="false" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="conversionPattern" value="%m%n" />
+		</layout>
+	</appender>
+
+	<logger name="log4j.rootLogger" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="ROOT" />
+	</logger>
+
+	<logger name="edu.cmu.cs.lane.pipeline.prepare" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="DATAPREPARE" />
+	</logger>
+
+	<logger name="edu.cmu.cs.lane.datareaders" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="DATAREADER" />
+	</logger>
+
+	<logger name="edu.cmu.cs.lane.pipeline.datapreprocessor"
+		additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="DATAPREPROCESSOR" />
+	</logger>
+
+	<logger name="edu.cmu.cs.lane.pipeline.snpfilter" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="SNPFILTER" />
+	</logger>
+
+	<logger name="edu.cmu.cs.lane.geneanalysis" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="DATAANALYZER" />
+	</logger>
+
+</log4j:configuration>
